@@ -1,0 +1,39 @@
+:root {
+    --white-color: #FFFFFF;
+    --bg-color: #2E4052;
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1.5rem;
+    height: 100vh;
+    height: 100svh;
+    width: 60vw;
+    width: 60svw;
+    margin: auto;
+}
+
+header h1{
+   font-size: 4rem;
+}
+
+.list li a {
+    text-decoration: none;
+}
+
+/* Work in progress... */
