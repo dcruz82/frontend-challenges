@@ -1,3 +1,4 @@
+@import '../../css/config.css';
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
 
@@ -8,19 +9,11 @@
     --white: hsl(0, 0%, 100%);
     --soft-blue: hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
-    font-size: 62.5%;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     background-color: var(--dark-blue-bg);
     font-family: 'Outfit', sans-serif;
-    font-size: 1.6rem;
 }
 
 main {
