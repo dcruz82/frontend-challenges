@@ -1,0 +1,96 @@
+@import '../../css/config.css';
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;900&display=swap');
+
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --brigh-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+main {
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    background: no-repeat center/100% 100% url('./images/pattern-background-mobile.svg');
+}
+
+.card {
+    width: 85%;
+    margin: auto;
+    border-radius: 2.5rem;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 25px;
+    background-color: #fff;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+    /* border: 1px solid black; */
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-content {
+    padding: 2rem 3rem;
+    color: var(--desaturated-blue);
+}
+
+.card-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.3rem;
+    color: var(--dark-blue);
+    font-weight: 800;
+}
+
+.card-content > p{
+    line-height: 1.6;
+    padding: 0 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.3rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--very-pale-blue);
+    margin-bottom: 1.8rem;
+}
+
+.card-price img {
+    width: 20%;
+}
+
+.pricing {
+    align-self: baseline;
+}
+
+.card-price p:first-child {
+    color:var(--dark-blue);
+    font-weight: 900;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 700;
+    width: 100%;
+    color: var(--desaturated-blue);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.btn-pay {
+    padding: 1.4rem 0;
+    color: var(--very-pale-blue);
+    border-radius: 1rem;
+    background-color: var(--brigh-blue);
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+}
