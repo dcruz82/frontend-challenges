@@ -1,85 +1,154 @@
 @import '../../css/config.css';
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
 
 :root {
-    --color-white: hsl(0, 0%, 100%);
-    ---light-grayish-violet: hsl(270, 3%, 87%);
-    ---dark-grayish-violet: hsl(279, 6%, 55%);
-    ---very-dark-violet: hsl(278, 68%, 11%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --linear-gradient-active-input-border: hsl(249, 99%, 64%); /*to hsl(278, 94%, 30%);*/
+    --red-input-errors: hsl(0, 100%, 66%);
+}
+
+* {
     font-family: 'Space Grotesk', sans-serif;
+    /* border: 1px solid lawngreen; */
 }
 
 main {
-    height: 100vh;
-    height: 100svh;
-    display: flex;
-
+    max-height: 100vh;
+    max-height: 100svh;
+    display: grid;
+    grid-template-rows: 26rem minmax(45rem,2fr);
+    row-gap: 5rem;
 }
 
-.background-card {
-    width: 35vw;
-    width: 35svw;
+.card-container {
+    position: relative;
     background: no-repeat url(./assets/bg-main-desktop.png);
 }
 
-img {
-    width: 100%;
+.front-card, .back-card {
+    position: absolute;
+    width: 30rem;
+    height: 17rem;
+    overflow: hidden;
 }
 
-.card-front{
-    /* width: 20rem;
-    background: url(../images/bg-card-front.png); */
+.front-card{
+    background: center/100% 100% no-repeat url(./assets/bg-card-front.png); 
+    left: 1.5rem;
+    bottom: -3.4rem;
+    z-index: 1;
 }
 
-.card-front::after {
-    display: absolute;
-    width: 100%;
-    top: 1rem;
-    left: 3rem;
-    color: white;
-    content: '0000 0000 0000 0000';
+.card-content {
+    padding: 1.5rem;
+    display: grid;
+    row-gap: 2rem;
+    color: var(--white);
+    /* grid-template-columns: auto; */
 }
 
-.card-back {
-    display: absolute;
-    z-index: -1;
-    top: 1rem;
-    left: 3rem;
-}
+/* <row-start> / <column-start> / <row-end> / <column-end */
+.back-card {
+    background: center/100% 100% no-repeat url(./assets/bg-card-back.png);
+    top: 3rem;
+    right: 1.8rem;
+} 
 
 .form-container{
-    width: 50%;
-    padding: 2rem;
-    display: grid;
-    place-items: center;
+    padding: 0.5rem;
 }
 
-.form-card-data, .form-field {
+.form-card, .form-field {
     font-size: 1.8rem;
 }
 
-.form-card-data {
-    margin: auto;
+.form-card{
+    padding: 3rem 2rem;
 }
 
-.form-card-data label {
+.form-card label {
+    font-size: 1.4rem;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
+.form-card .card-data {
+    display: flex;
 }
 
 .form-field {
     width: 100%;
     padding: 0.6rem 1rem;
-    border: 0.1rem solid var(---light-grayish-violet);
-    border-radius: 0.5rem;
-    color: var(---light-grayish-violet);
-    margin-bottom: 0.8rem;
+    border: 0.1rem solid var(--light-grayish-violet);
+    border-radius: 0.6rem;
+    margin: 1.2rem 0;
+    outline: none;
+}
+
+.form-field:focus {
+    border: 1px solid var(--linear-gradient-active-input-border);
+}
+
+.form-field::placeholder {
+    --light-grayish-violet: hsl(300, 1%, 83%);
+    color: var(--light-grayish-violet);
 }
 
 .form-btn {
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.4rem 0;
     margin-top: 1rem;
-    background-color: var(---very-dark-violet);
-    color: var(--color-white);
+    font-weight: 500;
+    border-radius: 0.6rem;
+    background-color: var(--very-dark-violet);
+    color: var(--white);
+}
+
+@media screen and (min-width: 500px) {
+    main {
+        gap: 0;
+        grid-template-columns: 40rem minmax(50rem, 2fr);
+        grid-template-rows: 1fr;
+    }
+    
+    .card-container {
+        min-height: 100vh;
+        min-height: 100svh;
+        max-height: 100vh;
+        max-height: 100svh;
+    }
+
+    .front-card, .back-card {
+        width: 34rem;
+        height: 20rem;
+    }
+
+    .front-card {
+        inset: unset;
+        top: 17rem;
+        left: 14rem;
+    }
+
+    .back-card {
+        inset: unset;
+        right: -15rem;
+        bottom: 16rem;
+    }
+    
+    .form-container{
+        display: grid;
+        place-items: center;
+        
+    } 
+    
+    .form-card {
+        width: 50%;
+        /* margin: 0 auto; */
+    }
+
 }

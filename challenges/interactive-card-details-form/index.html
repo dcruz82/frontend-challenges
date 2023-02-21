@@ -3,33 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
 <body>
   <main>
-    <div class="background-card">
-      <img src="./assets/bg-card-front.png" alt="Credit card front.">
-      <img class="card-back" src="./assets/bg-card-back.png" alt="Credit card back.">
-      <!-- <img src="./images/card-logo.svg" alt=""> -->
-      <!-- <p>0000 0000 0000 0000</p>
-      <span>Jane Appleseed</span>
-      <span>00/00</span> -->
+    <div class="card-container">
+      <div class="front-card">
+        <div class="card-content">
+          <img src="./assets/card-logo.svg" alt="Card logo.">
+          <span class="number">0000 0000 0000 0000</span>
+          <span class="holder">Jane Appleseed</span>
+          <span class="date">00/00</span>
+        </div>
+      </div>
+      <div class="back-card"></div>
     </div>
     <div class="form-container">
-      <form class="form-card-data">
-        <label>Cardholder Name</label>
-        <input class="form-field" type="text" placeholder="e.g. Jane Appleseed">
-        <label>Card Number</label>
-        <input class="form-field" type="number" placeholder="e.g. 1234 5678 9123 0000"> 
-        <label>Exp. Date(MM/YY)</label>
-        <input class="form-field" type="number" placeholder="MM">
-        <input class="form-field" type="number" placeholder="YY">
-        <label>CVC</label>
-        <input class="form-field" type="number" placeholder="e.g. 123">
+      <form class="form-card">
+        <label for="holder-name">Cardholder Name</label>
+        <input id="holder-name" class="form-field" type="text" placeholder="e.g. Jane Appleseed" required>
+        <label for="card-number">Card Number</label>
+        <input id="card-number" class="form-field" type="number" placeholder="e.g. 1234 5678 9123 0000" required> 
+        <div class="card-data">
+          <label>Exp. Date(MM/YY)
+            <input class="form-field" type="number" placeholder="MM" required>
+            <input class="form-field" type="number" placeholder="YY" required>
+          </label>
+          <label>CVC
+            <input class="form-field" type="number" placeholder="e.g. 123">
+          </label>
+        </div>
         <input class="form-btn" type="submit" value="Confirm">
       </form>
     </div>
