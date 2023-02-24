@@ -1,5 +1,4 @@
-@import '../../css/config.css';
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
+@import '../../css/global.css';
 
 :root {
     --white: hsl(0, 0%, 100%);
@@ -15,7 +14,13 @@
     /* border: 1px solid gray; */
 }
 
+html,
+body {
+    height: 100%;
+}
+
 main {
+    height: 100%; 
     min-height: 100vh;
     min-height: 100svh;
     display: grid;
@@ -30,21 +35,27 @@ main {
 .front-card, .back-card {
     position: absolute;
     width: calc(100% - 30%);
-    /* min-width: 25rem; */
-    height: fit-content;
+    /* min-width: 28rem;
+    max-width: 34rem; */
     background-color: transparent;
-    /* max-height: 15rem; */
+    /* max-height: 19rem;
+    min-height: 15rem; */
+    height: calc(25rem - 5%);
+    /* max-height: 21rem; */
     border-radius: 0.5rem;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    box-shadow: rgba(17, 12, 46, 0.15) 30px 48px 100px 0px;
     overflow: hidden;
+    /* min-width: 25rem; */
+    /* height: fit-content; */
 }
 
-.front-card img, .back-card img {
+/* .front-card img, .back-card img {
     object-fit: cover;
-    width: 100%;
-}
+    width:max(100%, 26rem);
+} */
 
 .front-card{
+    background: no-repeat top center/cover url(./assets/bg-card-front.png);
     right: 6rem;
     top: 11rem;
     z-index: 1;
@@ -64,6 +75,7 @@ main {
 }
 
 .back-card {
+    background: no-repeat top/100% 100% url(./assets/bg-card-back.png);
     top: 3rem;
     right: 1.8rem;
 }
@@ -90,12 +102,8 @@ main {
     letter-spacing: 0.15rem;
 }
 
-.form .card-data {
-    display: flex;
-    column-gap: 0.5rem;
-}
-
-.card-data fieldset{
+.form fieldset{
+    width: 50%;
     display: flex;
     column-gap: 0.5rem;
     flex-direction: row;
@@ -134,6 +142,7 @@ main {
     :root {
         --width-main: 23rem;
     }
+    
     main {
         grid-template-columns: minmax(var(--width-main), 1fr) 2fr;
         grid-template-rows: auto;
@@ -141,37 +150,43 @@ main {
     }
     
     .card-container {
-        min-height: 100vh;
-        min-height: 100svh;
+        height: 100%
     }
-
+    
     .front-card, .back-card {
-        /* max-width: 35rem; */
-        width: calc(100% - (35 * 100/ 100));
+        width: 100%;
+        max-width: 34rem;
         min-width: 28rem;
-        /* height: calc(100% / 4.7); */
-        object-fit: cover;
-        /* height: 19.4rem; */
+        /* height: 31%; */
+        min-height: 17rem;
+        max-height: 19.4rem;
     }
-
+    
     .front-card {
-        top: 17rem;
+        /* top: 17rem; */
+        top: unset;
+        bottom: 38rem;
         right: -8rem;
     }
     
     .back-card {
-        right: -15rem;
-        top: 40rem;
+        top: unset;
+        right: -14rem;
+        bottom: 15rem;
     }
     
     .form-container {
-        align-items: center;
+        place-items: center;
     }
+    
     .form {
-        min-width: none;
+        min-width: 27rem;
         width: 50%;
         /* margin: 0 auto; */
-
+        /* display: grid;
+        grid-template-columns: 1fr; */
+        /* grid-template-rows: repeat(2, 1fr); */
+        
     }
-
+    
 }

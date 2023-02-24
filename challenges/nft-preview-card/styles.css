@@ -1,6 +1,4 @@
-@import '../../css/config.css';
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
-
+@import '../../css/global.css';
 
 :root {
     --dark-blue-bg: hsl(217, 54%, 11%);
