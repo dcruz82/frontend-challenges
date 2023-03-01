@@ -1,0 +1,135 @@
+@import '../../css/global.css';
+
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+* {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    background-color: var(--pale-blue);
+}
+
+main {
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    background: no-repeat center/100% 50% url('./images/pattern-background-mobile.svg');
+}
+
+.card {
+    width: 85%;
+    margin: auto;
+    border-radius: 2.5rem;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 25px;
+    background-color: #fff;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-content {
+    padding: 2rem 3rem;
+    color: var(--desaturated-blue);
+}
+
+.card-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.3rem;
+    color: var(--dark-blue);
+    font-weight: 800;
+}
+
+.card-content > p{
+    line-height: 1.6;
+    padding: 0 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-price {
+    display: flex;
+    flex-flow: row wrap;
+    place-items: center;
+    justify-content: space-between;
+    column-gap: 1rem;
+    padding: 1.3rem 2rem;
+    border-radius: 1rem;
+    background-color: var(--very-pale-blue);
+    margin-bottom: 1.8rem;
+}
+
+.card-price img {
+    width: 20%;
+}
+
+.card-price a {
+    color: var(--bright-blue);
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.pricing {
+    flex: 2;
+    padding: 0 0.7rem;
+    text-align: left;
+    place-self: center start;
+}
+
+.pricing p:first-child {
+    color:var(--dark-blue);
+    font-weight: 900;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 900;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: none;
+    background-color: transparent;
+    color: var(--desaturated-blue);
+    padding: 1rem 0;
+    overflow: visible;
+}
+
+.btn-proceed {
+    padding: 1.4rem 0;
+    font-weight: 700;
+    color: var(--very-pale-blue);
+    border-radius: 1rem;
+    background-color: var(--bright-blue);
+    box-shadow: 0 12px 30px rgba(50, 50, 93, 0.25);
+}
+
+.card button:hover {
+    cursor: pointer;
+}
+
+.btn-proceed:hover {
+    --bright-blue: hsla(245, 75%, 52%, 0.7);
+    background-color: var(--bright-blue);
+}
+
+.btn-cancel:hover {
+    color: var(--dark-blue);
+}
+
+@media screen and (min-width: 400px) {    
+    main {
+        background: no-repeat top/100% 50% url(./images/pattern-background-desktop.svg) 
+    }
+
+    .card {
+        width: 38rem;
+    }
+}
